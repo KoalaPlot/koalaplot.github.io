@@ -1,6 +1,6 @@
 {
     "name": "koalaplot-site",
-    "version": "0.7.3-dev.0-unreleased",
+    "version": "0.0.1",
     "description": "Koala plot site that uses Docsy theme for technical documentation.",
     "repository": "github:KoalaPlot/koalaplot.github.io",
     "homepage": "https://koalaplot.github.io/",
