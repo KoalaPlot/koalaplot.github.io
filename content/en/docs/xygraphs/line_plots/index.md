@@ -30,4 +30,26 @@ Now lets add a second line plotting the function \\( y=e^{\sqrt{x}} \\), which l
 
 ## Scatter Plots
 
+A scatter plot is very similar to a line plot, and uses the same ```LinePlot``` Composable function, except instead of lines connecting data points a symbol is drawn at each data point. In Koala Plot, the symbols are themselves Composables, and to make it even simpler provides the {{< api pkg="" sym="Symbol()" >}}Symbol{{< /api >}} Composable to make it easy to use a Shape with any fill and outline. Beyond the standard Compose circle and rectangle shapes, Koala Plot also defines additional shapes that are common for graphs, such as the {{< api pkg="" sym="TriangleShape()" >}}TriangleShape{{< /api >}} and {{< api pkg="" sym="DiamondShape()" >}}DiamondShape{{< /api >}}.
+
+The below example illustrates a scatter plot using the default ```RectangleShape``` used by ```Symbol```.
+
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Scatter1.kt" 16 34 %}}
+![Scatter plot](Scatter1.png)
+{{% /example %}}
+
 ## Combining Lines & Symbols
+
+Combining lines and symbols on a single ```XYGraph``` is as simple as repeatedly using ```LinePlot``` for each data series to be plotted. The below example illustrates the scatter plot from the previous example, together with a plot of a line.
+
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Scatter2.kt" 17 40 %}}
+![Scatter plot](Scatter2.png)
+{{% /example %}}
+
+The z-order of the plots corresponds to the order in which they appear in the ```XYGraph```, so in this example the line is plotted first, and the rectangle symbols are plotted second and draw over the line.
+
+It is also possible to plot both lines and symbols with the same ```LinePlot```, as illustrated below, which is a modification of the previous example plotting the function \\( y=x^2 \\).
+
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Line3.kt" 29 33 %}}
+![Line with symbols](Line3.png)
+{{% /example %}}

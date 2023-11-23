@@ -1,6 +1,13 @@
 {{ $pkg := .Get "pkg" }}
 {{ $sym := .Get "sym" }}
 
+{{ $package := "" }}
+{{ if eq $pkg "" }}
+{{ $package = $pkg }}
+{{ else }}
+{{ $package = print "." $pkg }}
+{{ end }}
+
 {{ $uppers := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
 
 {{ $base := "https://koalaplot.github.io/koalaplot-core/api/0.5.0-dev2/-koala%20-plot%20-core/" }}
@@ -13,7 +20,7 @@
 
 {{ if (hasSuffix $sym "()") }}
 
-{{ $url := print $base "io.github.koalaplot.core." $pkg "/" $symbol ".html" }}
+{{ $url := print $base "io.github.koalaplot.core" $package "/" $symbol ".html" }}
 <a href="{{$url}}" target="_blank">{{.Inner}}</a>{{else}}
-{{ $url := print $base "io.github.koalaplot.core." $pkg "/" $symbol "/index.html" }}
+{{ $url := print $base "io.github.koalaplot.core" $package "/" $symbol "/index.html" }}
 <a href="{{$url}}" target="_blank">{{.Inner}}</a>{{ end }}
