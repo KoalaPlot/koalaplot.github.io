@@ -15,35 +15,37 @@ jobs:
         env:
             HUGO_VERSION: 0.120.4
         steps:
-            -   name: Install Hugo CLI
-                run: |
-                    wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-                    && sudo dpkg -i ${{ runner.temp }}/hugo.deb   
-
-            -   name: Install Dart Sass
-                run: sudo snap install dart-sass
-
-            -   name: Setup node
-                uses: actions/setup-node@v4
-                with:
-                    node-version: 18
-
-            -   name: Install Docsy dependencies
-                run: |
-                    npm install postcss postcss-cli autoprefixer
-
             -   name: Checkout
                 uses: actions/checkout@v4
                 with:
                     submodules: recursive
                     fetch-depth: 0
 
+            -   name: Setup Hugo
+                uses: peaceiris/actions-hugo@v2
+                with:
+                    hugo-version: '0.120.4'
+                    extended: true
+    
+            -   name: Setup node
+                uses: actions/setup-node@v4
+                with:
+                    node-version: '18'
+                    cache: 'npm'
+                    # The action defaults to search for the dependency file (package-lock.json,
+                    # npm-shrinkwrap.json or yarn.lock) in the repository root, and uses its
+                    # hash as a part of the cache key.
+                    # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
+                    cache-dependency-path: '**/package-lock.json'
+
+            -   run: npm ci
+
             -   name: Build with Hugo
                 env:
                     # For maximum backward compatibility with Hugo modules
                     HUGO_ENVIRONMENT: production
                     HUGO_ENV: production
-                run: hugo --gc --minify
+                run: hugo --minify
 
             -   name: Deploy to GitHub Pages
                 if: success()
