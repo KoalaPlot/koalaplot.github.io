@@ -2,7 +2,7 @@ name: Build and publish user guide documentation to GitHub Pages
 
 on:
     push:
-        branches: [ "main" ]
+        branches: [ "guide" ]
     workflow_dispatch:
 
 concurrency:
@@ -30,6 +30,7 @@ jobs:
 
             -   name: Install Docsy dependencies
                 run: |
+                    npm install -g npx
                     npm install -D autoprefixer
                     npm install -D postcss-cli
                     npm install -D postcss
