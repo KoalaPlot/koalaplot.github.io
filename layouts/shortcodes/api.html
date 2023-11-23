@@ -1,0 +1,19 @@
+{{ $pkg := .Get "pkg" }}
+{{ $sym := .Get "sym" }}
+
+{{ $uppers := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+
+{{ $base := "https://koalaplot.github.io/koalaplot-core/api/0.5.0-dev2/-koala%20-plot%20-core/" }}
+
+{{ $symbol := replace $sym "()" "" }}
+{{ range $ch := $uppers }}
+{{ $replacement := print "-" (lower $ch)}}
+{{ $symbol = (replace $symbol $ch $replacement) }}
+{{ end }}
+
+{{ if (hasSuffix $sym "()") }}
+
+{{ $url := print $base "io.github.koalaplot.core." $pkg "/" $symbol ".html" }}
+<a href="{{$url}}" target="_blank">{{.Inner}}</a>{{else}}
+{{ $url := print $base "io.github.koalaplot.core." $pkg "/" $symbol "/index.html" }}
+<a href="{{$url}}" target="_blank">{{.Inner}}</a>{{ end }}

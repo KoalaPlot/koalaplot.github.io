@@ -1,0 +1,28 @@
+{{ $file := .Get 0 }}
+{{ $firstLine := add (.Get 1) -1 }}
+{{ $lastLine := add (.Get 2) -1 }}
+
+{{ with readFile $file }}
+    {{ $lang := path.Ext $file | strings.TrimPrefix "." }}
+
+    {{ $splitcontent := split . "\n" }}
+
+    {{ $delimited := "" }}
+    {{ range $index, $line := $splitcontent }}
+        {{ if (and (ge $index $firstLine) (le $index $lastLine)) }}
+            {{ $delimited = print $delimited $line }}
+            {{ if (lt $index $lastLine) }}
+                {{ $delimited = print $delimited "\n" }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ if eq $lang "kts" }}
+        {{ $lang = "kt" }}
+    {{ end }}
+
+{{ highlight $delimited $lang "lineNos=true" }}
+    
+{{ else }}
+    {{ errorf "Unable to get remote resource." }}
+{{ end }}
