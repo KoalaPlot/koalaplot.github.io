@@ -1,0 +1,126 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Koala Plot – XY Graphs: 2-D Cartesian Plots</title><link>https://koalaplot.github.io/docs/xygraphs/</link><description>Recent content in XY Graphs: 2-D Cartesian Plots on Koala Plot</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://koalaplot.github.io/docs/xygraphs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Line &amp; Scatter Plots</title><link>https://koalaplot.github.io/docs/xygraphs/line_plots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://koalaplot.github.io/docs/xygraphs/line_plots/</guid><description>
+&lt;h2 id="basics">Basics&lt;/h2>
+&lt;p>A line plot requires a list of data points, (x, y) pairs, with the data type and in the coordinate system of the axes provided to the enclosing &lt;code>XYGraph&lt;/code>. As an example, we want to plot the function \( y=x^2 \) with x from 1 to 10 with two Float axes:&lt;/p>
+&lt;ul class="nav nav-tabs" id="myTab" role="tablist">
+&lt;li class="nav-item" role="presentation">
+&lt;button class="nav-link active" id="code-tab-0" data-bs-toggle="tab" data-bs-target="#code-tab-pane-0" type="button" role="tab" aria-controls="code-tab-pane" aria-selected="true">Code&lt;/button>
+&lt;/li>
+&lt;li class="nav-item" role="presentation">
+&lt;button class="nav-link" id="output-tab-0" data-bs-toggle="tab" data-bs-target="#output-tab-pane-0" type="button" role="tab" aria-controls="output-tab-pane" aria-selected="false">Output&lt;/button>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="myTabContent">
+&lt;div class="tab-pane fade show active" id="code-tab-pane-0" role="tabpanel" aria-labelledby="code-tab" tabindex="0">
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-kt" data-lang="kt">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">val&lt;/span> &lt;span style="color:#000">data&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">buildList&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">i&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1.&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">add&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">DefaultPoint&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">i&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">toFloat&lt;/span>&lt;span style="color:#000;font-weight:bold">(),&lt;/span> &lt;span style="color:#000">i&lt;/span> &lt;span style="color:#000;font-weight:bold">*&lt;/span> &lt;span style="color:#000">i&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">toFloat&lt;/span>&lt;span style="color:#000;font-weight:bold">()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">XYGraph&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">rememberLinearAxisModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">data&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">autoScaleXRange&lt;/span>&lt;span style="color:#000;font-weight:bold">()),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">rememberLinearAxisModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">data&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">autoScaleYRange&lt;/span>&lt;span style="color:#000;font-weight:bold">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">LinePlot&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">data&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">lineStyle&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LineStyle&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">SolidColor&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Color&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blue&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;span class = "example">/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Line1.kt&lt;/span>
+&lt;/div>
+&lt;div class="tab-pane fade" id="output-tab-pane-0" role="tabpanel" aria-labelledby="output-tab" tabindex="0">
+&lt;p>&lt;img src="line1.png" alt="Line1">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>Lines 1-5 generate the data to plot. The data for Line plots is a list of x, y coordinates provided by an implementation of the
+&lt;a href="https://koalaplot.github.io/koalaplot-core/api/0.5.0-dev2/-koala%20-plot%20-core/io.github.koalaplot.core.xychart/-point/index.html" target="_blank">Point&lt;/a>
+interface. This example uses the provided implementation,
+&lt;a href="https://koalaplot.github.io/koalaplot-core/api/0.5.0-dev2/-koala%20-plot%20-core/io.github.koalaplot.core.xychart/-default-point/index.html" target="_blank">DefaultPoint&lt;/a>
+.&lt;/p>
+&lt;p>Lines 8 and 9 provide an AxisModel for each of the x and y axes to XYChart. In this case, we are using linear axes with floating point values (other types are covered in &lt;a href="https://koalaplot.github.io/docs/xygraphs/#axes">XY Graphs&lt;/a>) and ranges that are calculated with the
+calls to &lt;code>autoScaleXRange()&lt;/code> and &lt;code>autoScaleYRange()&lt;/code>.&lt;/p>
+&lt;p>Lines 11 through 13 call the &lt;code>LineChart&lt;/code> Composable to render the line itself, using a solid blue style.&lt;/p>
+&lt;h3 id="adding-a-second-line">Adding a Second Line&lt;/h3>
+&lt;p>Now lets add a second line plotting the function \( y=e^{\sqrt{x}} \), which looks like this:&lt;/p>
+&lt;ul class="nav nav-tabs" id="myTab" role="tablist">
+&lt;li class="nav-item" role="presentation">
+&lt;button class="nav-link active" id="code-tab-4" data-bs-toggle="tab" data-bs-target="#code-tab-pane-4" type="button" role="tab" aria-controls="code-tab-pane" aria-selected="true">Code&lt;/button>
+&lt;/li>
+&lt;li class="nav-item" role="presentation">
+&lt;button class="nav-link" id="output-tab-4" data-bs-toggle="tab" data-bs-target="#output-tab-pane-4" type="button" role="tab" aria-controls="output-tab-pane" aria-selected="false">Output&lt;/button>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="myTabContent">
+&lt;div class="tab-pane fade show active" id="code-tab-pane-4" role="tabpanel" aria-labelledby="code-tab" tabindex="0">
+&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-kt" data-lang="kt">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">XYGraph&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">rememberLinearAxisModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dataSquared&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">autoScaleXRange&lt;/span>&lt;span style="color:#000;font-weight:bold">()),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">rememberLinearAxisModel&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dataSquared&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">autoScaleYRange&lt;/span>&lt;span style="color:#000;font-weight:bold">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">LinePlot&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">dataSquared&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">lineStyle&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LineStyle&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">SolidColor&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Color&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Blue&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">LinePlot&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">dataExp&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">lineStyle&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">LineStyle&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">SolidColor&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">Color&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">200&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">2.&lt;/span>&lt;span style="color:#000">dp&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">dashPathEffect&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">floatArrayOf&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">20f&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10f&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;span class = "example">/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Line2.kt&lt;/span>
+&lt;/div>
+&lt;div class="tab-pane fade" id="output-tab-pane-4" role="tabpanel" aria-labelledby="output-tab" tabindex="0">
+&lt;p>&lt;img src="line2.png" alt="Line2">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="scatter-plots">Scatter Plots&lt;/h2>
+&lt;h2 id="combining-lines--symbols">Combining Lines &amp;amp; Symbols&lt;/h2></description></item><item><title>Docs: Area Plots</title><link>https://koalaplot.github.io/docs/xygraphs/area_plots/area-plots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://koalaplot.github.io/docs/xygraphs/area_plots/area-plots/</guid><description/></item><item><title>Docs: Bar Plots</title><link>https://koalaplot.github.io/docs/xygraphs/bar_plots/bar-plots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://koalaplot.github.io/docs/xygraphs/bar_plots/bar-plots/</guid><description>
+&lt;h2 id="basics">Basics&lt;/h2>
+&lt;h2 id="stacked-bars">Stacked Bars&lt;/h2>
+&lt;h2 id="grouped-bars">Grouped Bars&lt;/h2></description></item></channel></rss>
