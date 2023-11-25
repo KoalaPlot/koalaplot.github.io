@@ -97,6 +97,18 @@ Axis titles and labels are provided by Composable functions as parameters to ```
 
 In addition to using icons with varying colors for the x-axis labels, the above example also uses a custom ```AnnotatedString``` for the y-axis title.
 
+A common requirement is to rotate the x-axis labels to accommodate long, closely spaced, labels. Axis label rotation can be specified through the AxisStyle, as shown in the below example:
+
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/CategoryAxis3.kt" 14 20 %}}
+![Rotated labels](CategoryAxis3.png)
+{{% /example %}}
+
+
+{{% alert title="Caution" color="warning" %}}
+Using ```Modifier.rotate()``` on the label Composables will not produce the desired results. The ```AxisStyle.labelRotation``` property should be used instead.
+{{% /alert %}}
+
+
 ### Axis Ticks & Lines
 
 The sizes, and position of the ticks, as well as the color of each axis, can be individually configured by providing an {{< api pkg="xygraph" sym="AxisStyle" >}}AxisStyle{{< /api >}} to the ```XYGraph``` Composable, or through ```KoalaPlotTheme```. In this example we change the color, and set the length of the major and minor ticks to the same value:
