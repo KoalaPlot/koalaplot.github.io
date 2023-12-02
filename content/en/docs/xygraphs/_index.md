@@ -91,11 +91,13 @@ A {{< api pkg="xygraph" sym="CategoryAxisModel" >}}CategoryAxisModel{{< /api >}}
 
 Axis titles and labels are provided by Composable functions as parameters to ```XYGraph```. That enables a high degree of customizability, since, for example, axis labels do not need to all be the same color, and can even be non-text items like images or icons, as shown in the following example.
 
-{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/CategoryAxis2.kt" 31 71 %}}
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/CategoryAxis2.kt" 34 76 %}}
 ![Icon Categories](CategoryAxis2.png)
 {{% /example %}}
 
-In addition to using icons with varying colors for the x-axis labels, the above example also uses a custom ```AnnotatedString``` for the y-axis title.
+In addition to using icons with varying colors for the x-axis labels, the above example also uses a custom ```AnnotatedString``` for the y-axis title and demonstrates aligning it along the axis.
+
+When providing a Composable for an axis title, the available space will be the graph height for y-axis titles and the graph width for x-axis titles. Typical layout methods are used to position the title content within this space. In this example, Box was used to align the content to the bottom of the y-axis.
 
 A common requirement is to rotate the x-axis labels to accommodate long, closely spaced, labels. Axis label rotation can be specified through the AxisStyle, as shown in the below example:
 
