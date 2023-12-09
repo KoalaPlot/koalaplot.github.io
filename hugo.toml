@@ -72,13 +72,13 @@ title = "Koala Plot"
 [[menu.main]]
    name = "API"
    weight = 20
-   url = "https://koalaplot.github.io/koalaplot-core/api/0.5.0-dev2/index.html"
+   url = "https://koalaplot.github.io/koalaplot-core/api/0.5.0/index.html"
    pre = "<i class='fas fa-gear'></i>"
    post = '<sup><i class="ps-1 fa-solid fa-up-right-from-square fa-xs" aria-hidden="true"></i><sup>'
 [[menu.main]]
    name = "Samples"
    weight = 30
-   url = "https://koalaplot.github.io/koalaplot-samples/index.html"
+   url = "https://koalaplot.github.io/koalaplot-samples/wasmJs/productionExecutable/index.html"
    pre = "<i class='fas fa-chart-simple'></i>"
    post = '<sup><i class="ps-1 fa-solid fa-up-right-from-square fa-xs" aria-hidden="true"></i><sup>'
 [[menu.main]]
