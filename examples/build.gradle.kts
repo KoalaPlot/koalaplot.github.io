@@ -15,7 +15,7 @@ dependencies {
 }
 
 group = "io.github.koalaplot.examples"
-version = "0.5.0"
+version = "0.5.1"
 
 kotlin {
     jvm()
@@ -26,7 +26,7 @@ kotlin {
                 implementation(compose.material3)
                 implementation(compose.materialIconsExtended)
                 implementation(compose.ui)
-                implementation("io.github.koalaplot:koalaplot-core:0.5.0")
+                implementation("io.github.koalaplot:koalaplot-core:0.5.1")
             }
         }
 
