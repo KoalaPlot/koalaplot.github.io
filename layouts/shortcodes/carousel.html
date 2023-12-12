@@ -1,0 +1,28 @@
+<div id="carousel" class="carousel slide" data-bs-ride="carousel">
+{{ with (.Get "dir") }}
+{{ $files := readDir (print "/static/" .) }}
+<div class="carousel-inner">
+{{ range $index, $file := $files }}
+{{ $absoluteUrl := print ($.Get "dir") "/" .Name | absURL }}
+{{ if eq $index 0 }}
+<div class="carousel-item active text-center">
+<img src="{{ $absoluteUrl }}" class="object-fit-none">
+</div>
+{{ else }}
+<div class="carousel-item text-center">
+<img src="{{ $absoluteUrl }}" class="object-fit-none">
+</div>
+{{ end }}
+{{ end }}
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+{{ end }}
+</div>
+<br/>

@@ -43,6 +43,11 @@ provide default styling and minimize code
 
 {{% /blocks/section %}}
 
+{{% blocks/section %}}
+{{< carousel dir="examples" >}}
+{{% /blocks/section %}}
+
+
 {{% blocks/section type="row justify-content-center" %}}
 
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
