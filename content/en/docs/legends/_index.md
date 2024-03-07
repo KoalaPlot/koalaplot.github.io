@@ -14,7 +14,9 @@ The below example illustrates how the components are placed relative to each oth
 ![Chart layout](ChartLayout1.png)
 {{% /example %}}
 
-Note that charts by default will expand to fill all horizontal and/or vertical space available, and so if placed within a scrollable container must have a modifier applied that will limit their size.
+{{% alert title="Caution" color="warning" %}}
+By default charts will expand to fill all horizontal and/or vertical space available, and so if placed within a scrollable container must have a modifier applied that will limit their size.
+{{% /alert %}}
 
 ## Legends
 
