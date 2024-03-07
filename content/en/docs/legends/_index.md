@@ -14,6 +14,8 @@ The below example illustrates how the components are placed relative to each oth
 ![Chart layout](ChartLayout1.png)
 {{% /example %}}
 
+Note that charts by default will expand to fill all horizontal and/or vertical space available, and so if placed within a scrollable container must have a modifier applied that will limit their size.
+
 ## Legends
 
 To assist with generating legends, Koala Plot provides two Composables {{< api pkg="legend" sym="ColumnLegend()" >}}ColumnLegend{{< /api >}} and {{< api pkg="legend" sym="FlowLegend()" >}}FlowLegend{{< /api >}}. The above example included an example of ```ColumnLegend```. It places a symbol, a label, and a value in rows, each aligned in columns. A ```ColumnLegend``` with all three

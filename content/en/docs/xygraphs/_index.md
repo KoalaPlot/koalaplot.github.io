@@ -62,7 +62,8 @@ It is also possible to manually specify the range, for example:
 
 Since the x-axis data in this example ranges from 1 to 10 and the y-axis data ranges from 1 to 100, both axes are slightly over sized, which is sometimes desired.
 
-The previous example also illustrated how to control the number of minor ticks that are displayed between the major ticks: by specifying the ```minorTickCount``` parameter to ```LinearAxisModel```. 
+The previous example also illustrated how to control the number of minor ticks that are displayed between the major ticks: by specifying the ```minorTickCount``` parameter to ```LinearAxisModel```. There is always one minor grid line for each minor tick, but drawing the grid line itself
+is optional.
 
 ### CategoryAxisModel
 
