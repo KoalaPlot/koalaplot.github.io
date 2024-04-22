@@ -209,6 +209,13 @@ enable = false
 [params.katex]
 enable = true
 
+[[params.versions]]
+  version = "latest"
+  url = "https://koalaplot.github.io/"
+[[params.versions]]
+  version = "0.5"
+  url = "https://koalaplot.github.io/0.5"
+
 # hugo module configuration
 
 [module]
