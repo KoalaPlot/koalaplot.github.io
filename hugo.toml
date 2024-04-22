@@ -211,10 +211,10 @@ enable = true
 
 [[params.versions]]
   version = "latest"
-  url = "https://koalaplot.github.io/"
+  url = "https://koalaplot.github.io/docs"
 [[params.versions]]
   version = "0.5"
-  url = "https://koalaplot.github.io/0.5"
+  url = "https://koalaplot.github.io/0.5/docs"
 
 # hugo module configuration
 
