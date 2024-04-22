@@ -2,7 +2,7 @@ name: Build and publish user guide documentation to GitHub Pages
 
 on:
     push:
-        branches: [ "main" ]
+        branches: [ "v0.5" ]
     workflow_dispatch:
 
 concurrency:
