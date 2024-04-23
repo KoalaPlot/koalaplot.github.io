@@ -14,7 +14,7 @@ import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.util.toString
 import io.github.koalaplot.core.xygraph.Point
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 import kotlin.math.PI
 import kotlin.math.exp
 import kotlin.math.pow
@@ -23,8 +23,8 @@ import kotlin.math.sqrt
 @OptIn(ExperimentalKoalaPlotApi::class)
 fun main() = singleWindowApplication {
     XYGraph(
-        rememberLinearAxisModel(-5f..5f),
-        rememberLinearAxisModel(0f..1f),
+        rememberFloatLinearAxisModel(-5f..5f),
+        rememberFloatLinearAxisModel(0f..1f),
         xAxisTitle = "",
         yAxisTitle = "",
         xAxisLabels = { it.toString(1) },

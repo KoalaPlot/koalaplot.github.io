@@ -8,7 +8,7 @@ import io.github.koalaplot.core.line.LinePlot
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.DefaultPoint
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 import kotlin.random.Random
 
 @OptIn(ExperimentalKoalaPlotApi::class)
@@ -24,8 +24,8 @@ fun main() = singleWindowApplication {
     }
 
     XYGraph(
-        rememberLinearAxisModel(0f..12f),
-        rememberLinearAxisModel(0f..12f)
+        rememberFloatLinearAxisModel(0f..12f),
+        rememberFloatLinearAxisModel(0f..12f)
     ) {
         LinePlot(
             data,

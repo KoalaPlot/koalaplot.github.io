@@ -40,13 +40,22 @@ The sample above uses the {{< api pkg="style" sym="LineStyle" >}}LineStyle{{< /a
 
 Since an XYGraph provides a graphing area for 2-d Cartesian plots, it requires a model, an implementation of the {{< api pkg="xygraph" sym="AxisModel" >}}AxisModel{{< /api >}} interface, for the x-axis (horizontal) and y-axis (vertical) axes. The AxisModel provides an abstraction for converting from the units in the space used for the plots to the space used for the graph. It also defines where major and minor ticks should be placed along the axis, and handles transforming the axis for zooming and panning. KoalaPlot includes three of the most comment types of axes:
 
-- {{< api pkg="xygraph" sym="LinearAxisModel" >}}LinearAxisModel{{< /api >}} for using floating point values on a linear scale
+- {{< api pkg="xygraph" sym="ILinearAxisModel" >}}ILinearAxisModel{{< /api >}} for using values on a linear scale
 - {{< api pkg="xygraph" sym="CategoryAxisModel" >}}CategoryAxisModel{{< /api >}} for using lists of any type of object, e.g. Strings, as values
 - {{< api pkg="xygraph" sym="LogAxisModel" >}}LogAxisModel{{< /api >}} for using floating point values on a logarithmic scale
 
-### LinearAxisModel
+### ILinearAxisModel
 
-The simplest way to get a LinearAxisModel is to call the function {{< api pkg="xygraph" sym="rememberLinearAxisModel()" >}}rememberLinearAxisModel{{< /api >}}. This will create a LinearAxisModel and remember it for you.
+ILinearAxisModel is an interface for representing linear axes that can be of any Number type. There are concrete implementations provided for Int, Float, and Double types:
+{{< api pkg="xygraph" sym="IntLinearAxisModel" >}}IntLinearAxisModel{{< /api >}},
+{{< api pkg="xygraph" sym="FloatLinearAxisModel" >}}FloatLinearAxisModel{{< /api >}}, and 
+{{< api pkg="xygraph" sym="DoubleLinearAxisModel" >}}DoubleLinearAxisModel{{< /api >}}.
+
+The simplest way to get an instance of one of these is to call remember function corresponding to the data type needed, i.e., 
+{{< api pkg="xygraph" sym="rememberIntLinearAxisModel()" >}}rememberIntLinearAxisModel{{< /api >}},
+{{< api pkg="xygraph" sym="rememberFloatLinearAxisModel()" >}}rememberFloatLinearAxisModel{{< /api >}}, or
+{{< api pkg="xygraph" sym="rememberDoubleLinearAxisModel()" >}}rememberDoubleLinearAxisModel{{< /api >}}.
+This will create axis model and remember it for you.
 
 #### Setting the Range
 

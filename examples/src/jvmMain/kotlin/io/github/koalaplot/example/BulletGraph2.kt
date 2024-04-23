@@ -13,7 +13,7 @@ import androidx.compose.ui.window.singleWindowApplication
 import io.github.koalaplot.core.bar.BulletGraphs
 import io.github.koalaplot.core.style.KoalaPlotTheme
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
-
+import io.github.koalaplot.core.xygraph.FloatLinearAxisModel
 
 @OptIn(ExperimentalKoalaPlotApi::class)
 fun main() = singleWindowApplication() {
@@ -29,21 +29,21 @@ fun main() = singleWindowApplication() {
     }
 
     BulletGraphs(modifier = Modifier.padding(16.dp)) {
-        bullet {
+        bullet(FloatLinearAxisModel(0f..300f)) {
             label { TwoLineLabel("Revenue", "(US $ in thousands)") }
             axis { labels { Text("${it.toInt()}", style = MaterialTheme.typography.labelSmall) } }
             comparativeMeasure(250f)
             featuredMeasureBar(275f)
             ranges(0f, 150f, 225f, 300f)
         }
-        bullet {
+        bullet(FloatLinearAxisModel(0f..30f)) {
             label { TwoLineLabel("Profit", "%") }
             axis { labels { Text("${it.toInt()}%", style = MaterialTheme.typography.labelSmall) } }
             comparativeMeasure(26f)
             featuredMeasureBar(22.5f)
             ranges(0f, 20f, 25f, 30f)
         }
-        bullet {
+        bullet(FloatLinearAxisModel(0f..600f)) {
             label { TwoLineLabel("Avg Order Size", "U.S. $") }
             axis { labels { Text("${it.toInt()}", style = MaterialTheme.typography.labelSmall) } }
             comparativeMeasure(550f)

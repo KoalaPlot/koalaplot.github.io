@@ -10,7 +10,7 @@ import io.github.koalaplot.core.xygraph.DefaultPoint
 import io.github.koalaplot.core.xygraph.XYGraph
 import io.github.koalaplot.core.xygraph.autoScaleXRange
 import io.github.koalaplot.core.xygraph.autoScaleYRange
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 
 @OptIn(ExperimentalKoalaPlotApi::class)
 fun main() = singleWindowApplication {
@@ -21,8 +21,8 @@ fun main() = singleWindowApplication {
     }
 
     XYGraph(
-        rememberLinearAxisModel(data.autoScaleXRange()),
-        rememberLinearAxisModel(data.autoScaleYRange())
+        rememberFloatLinearAxisModel(data.autoScaleXRange()),
+        rememberFloatLinearAxisModel(data.autoScaleYRange())
     ) {
         LinePlot(
             data,

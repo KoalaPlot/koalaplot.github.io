@@ -29,7 +29,7 @@ import io.github.koalaplot.core.util.VerticalRotation
 import io.github.koalaplot.core.util.rotateVertically
 import io.github.koalaplot.core.xygraph.CategoryAxisModel
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 
 fun main() = singleWindowApplication {
     val yAxisTitle = buildAnnotatedString {
@@ -43,7 +43,7 @@ fun main() = singleWindowApplication {
 
     XYGraph(
         xAxisModel = CategoryAxisModel(IconCategories.entries),
-        yAxisModel = rememberLinearAxisModel(0f..4f, minorTickCount = 0),
+        yAxisModel = rememberFloatLinearAxisModel(0f..4f, minorTickCount = 0),
         xAxisLabels = { it.icon() },
         xAxisTitle = {},
         yAxisLabels = { Text(it.toString()) },

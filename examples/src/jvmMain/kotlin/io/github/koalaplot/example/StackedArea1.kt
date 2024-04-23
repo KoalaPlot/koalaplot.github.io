@@ -15,7 +15,7 @@ import io.github.koalaplot.core.style.LineStyle
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.util.toString
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 import kotlin.random.Random
 
 @OptIn(ExperimentalKoalaPlotApi::class)
@@ -40,8 +40,8 @@ fun main() = singleWindowApplication {
     }
 
     XYGraph(
-        rememberLinearAxisModel(0f..12f),
-        rememberLinearAxisModel(0f..25f),
+        rememberFloatLinearAxisModel(0f..12f),
+        rememberFloatLinearAxisModel(0f..25f),
         xAxisTitle = "",
         yAxisTitle = "",
         xAxisLabels = { it.toString(1) },

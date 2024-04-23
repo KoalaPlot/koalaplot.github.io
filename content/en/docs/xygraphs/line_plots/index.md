@@ -53,3 +53,18 @@ It is also possible to plot both lines and symbols with the same ```LinePlot```,
 {{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Line3.kt" 29 33 %}}
 ![Line with symbols](Line3.png)
 {{% /example %}}
+
+## StairStep Plots
+
+The {{< api pkg="xychart" sym="StairstepPlot()" >}}StairstepPlot{{< /api >}} is a variant of a line plot that draws series as points and stairsteps between points. A simple example is shown below.
+
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Stairstep1.kt" 17 31 %}}
+![Stairstep plot](stairstep1.png)
+{{% /example %}}
+
+A variant of StairstepPlot lets you specify a line style for each level. This is illustrated below where the coloring
+of the step at each level is varied according to the y-axis value.
+
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/Stairstep2.kt" 18 35 %}}
+![Stairstep plot 2](stairstep2.png)
+{{% /example %}}

@@ -2,6 +2,7 @@ package io.github.koalaplot.example
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.singleWindowApplication
 import io.github.koalaplot.core.line.StairstepPlot
 import io.github.koalaplot.core.style.LineStyle
@@ -26,7 +27,10 @@ fun main() = singleWindowApplication {
     ) {
         StairstepPlot(
             data,
-            lineStyle = LineStyle(SolidColor(Color.Blue))
+            lineStyle = LineStyle(SolidColor(Color.Transparent)),
+            levelLineStyle = { y ->
+                LineStyle(SolidColor(Color(red = y / 100f, green = 0f, blue = 0f)), strokeWidth = 4.dp)
+            }
         )
     }
 }

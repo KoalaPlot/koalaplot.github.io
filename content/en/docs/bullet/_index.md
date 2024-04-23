@@ -8,7 +8,7 @@ The bullet graph is a type of linear bar guage and is based on the [Perceptual E
 
 The below example creates a single bullet graph with a two-line title.
 
-{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/BulletGraph.kt" 20 41 %}}
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/BulletGraph.kt" 20 36 %}}
 ![Bullet](bullet.png)
 {{% /example %}}
 

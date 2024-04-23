@@ -210,7 +210,7 @@ enable = false
 enable = true
 
 [[params.versions]]
-  version = "latest"
+  version = "0.6"
   url = "https://koalaplot.github.io/docs"
 [[params.versions]]
   version = "0.5"

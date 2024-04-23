@@ -9,7 +9,7 @@ import io.github.koalaplot.core.bar.VerticalBarPlot
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.CategoryAxisModel
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 
 @OptIn(ExperimentalKoalaPlotApi::class)
 fun main() = singleWindowApplication {
@@ -18,7 +18,7 @@ fun main() = singleWindowApplication {
 
     XYGraph(
         xAxisModel = remember { CategoryAxisModel(boroughs) },
-        yAxisModel = rememberLinearAxisModel(0f..3f, minorTickCount = 0),
+        yAxisModel = rememberFloatLinearAxisModel(0f..3f, minorTickCount = 0),
         yAxisTitle = "Population (Millions)"
     ) {
         VerticalBarPlot(

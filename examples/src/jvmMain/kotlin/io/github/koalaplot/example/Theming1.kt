@@ -15,7 +15,7 @@ import io.github.koalaplot.core.xygraph.DefaultPoint
 import io.github.koalaplot.core.xygraph.XYGraph
 import io.github.koalaplot.core.xygraph.autoScaleXRange
 import io.github.koalaplot.core.xygraph.autoScaleYRange
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 
 fun main() = singleWindowApplication() {
     Column {
@@ -33,8 +33,8 @@ private fun ColumnScope.Theming1() {
     }
 
     XYGraph(
-        rememberLinearAxisModel(data.autoScaleXRange()),
-        rememberLinearAxisModel(data.autoScaleYRange()),
+        rememberFloatLinearAxisModel(data.autoScaleXRange()),
+        rememberFloatLinearAxisModel(data.autoScaleYRange()),
         modifier = Modifier.weight(0.5f)
     ) {
         LinePlot(
@@ -45,8 +45,8 @@ private fun ColumnScope.Theming1() {
 
     KoalaPlotTheme(axis = KoalaPlotTheme.axis.copy(color = Color.Black, minorGridlineStyle = null)) {
         XYGraph(
-            rememberLinearAxisModel(data.autoScaleXRange()),
-            rememberLinearAxisModel(data.autoScaleYRange()),
+            rememberFloatLinearAxisModel(data.autoScaleXRange()),
+            rememberFloatLinearAxisModel(data.autoScaleYRange()),
             modifier = Modifier.weight(0.5f)
         ) {
             LinePlot(

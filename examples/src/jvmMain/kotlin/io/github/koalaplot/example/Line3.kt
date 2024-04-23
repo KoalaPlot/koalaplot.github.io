@@ -10,7 +10,7 @@ import io.github.koalaplot.core.style.LineStyle
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.DefaultPoint
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 
 @OptIn(ExperimentalKoalaPlotApi::class)
 fun main() = singleWindowApplication {
@@ -21,8 +21,8 @@ fun main() = singleWindowApplication {
     }
 
     XYGraph(
-        rememberLinearAxisModel(0f..12f),
-        rememberLinearAxisModel(-10f..110f, minimumMajorTickIncrement = 10f, minimumMajorTickSpacing = 30.dp),
+        rememberFloatLinearAxisModel(0f..12f),
+        rememberFloatLinearAxisModel(-10f..110f, minimumMajorTickIncrement = 10f, minimumMajorTickSpacing = 30.dp),
         horizontalMinorGridLineStyle = null,
         verticalMinorGridLineStyle = null
     ) {

@@ -8,6 +8,7 @@ import io.github.koalaplot.core.bar.solidBar
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.CategoryAxisModel
 import io.github.koalaplot.core.xygraph.XYGraph
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
 
 @OptIn(ExperimentalKoalaPlotApi::class)
@@ -16,7 +17,7 @@ fun main() = singleWindowApplication {
 
     XYGraph(
         xAxisModel = remember { CategoryAxisModel(categories) },
-        yAxisModel = rememberLinearAxisModel(0f..150f, minorTickCount = 0),
+        yAxisModel = rememberFloatLinearAxisModel(0f..150f, minorTickCount = 0),
     ) {
         VerticalBarPlot {
             item("Initial Cash", 0f, 100f, solidBar(Color.DarkGray))

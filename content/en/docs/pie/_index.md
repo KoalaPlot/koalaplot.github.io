@@ -16,6 +16,7 @@ Each slice is scaled to be proportional to the total of all values.
 
 There are many options for tailoring the visual appearance of the Pie Chart and a good way to quickly see their effect is by looking at the Pie Chart from the [web samples](https://koalaplot.github.io/koalaplot-samples/index.html).
 
+By default, the pie chart will place slice labels around the outer perimeter of the pie in a circle, given sufficient space for the labels. If there isn't sufficient space, it will push the labels up or down so that they don't overlap each other. If you don't like this approach, the position of the labels is pluggable and can be customized by implementing the {{< api pkg="pie" sym="LabelPositionProvider" >}}LabelPositionProvider{{< /api >}} interface and passing your implementation to ```PieChart()```.
 
 ## Donut Charts
 

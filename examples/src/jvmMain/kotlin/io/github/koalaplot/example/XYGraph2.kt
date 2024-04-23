@@ -6,7 +6,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.singleWindowApplication
 import io.github.koalaplot.core.style.KoalaPlotTheme
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
-import io.github.koalaplot.core.xygraph.LinearAxisModel
+import io.github.koalaplot.core.xygraph.FloatLinearAxisModel
 import io.github.koalaplot.core.xygraph.XYGraph
 import io.github.koalaplot.core.xygraph.rememberAxisStyle
 
@@ -20,8 +20,8 @@ fun main() = singleWindowApplication {
         )
     ) {
         XYGraph(
-            xAxisModel = LinearAxisModel(0f..10f),
-            yAxisModel = LinearAxisModel(0f..20f),
+            xAxisModel = FloatLinearAxisModel(0f..10f),
+            yAxisModel = FloatLinearAxisModel(0f..20f),
             xAxisTitle = "X Axis Title",
             yAxisTitle = "Y Axis Title",
             xAxisStyle = rememberAxisStyle(

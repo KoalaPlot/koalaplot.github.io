@@ -5,6 +5,7 @@ plugins {
 }
 
 repositories {
+    google()
     mavenCentral()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     mavenLocal()
@@ -15,7 +16,7 @@ dependencies {
 }
 
 group = "io.github.koalaplot.examples"
-version = "0.5.1"
+version = "0.6.0-dev4"
 
 kotlin {
     jvm()
@@ -26,7 +27,7 @@ kotlin {
                 implementation(compose.material3)
                 implementation(compose.materialIconsExtended)
                 implementation(compose.ui)
-                implementation("io.github.koalaplot:koalaplot-core:0.5.1")
+                implementation("io.github.koalaplot:koalaplot-core:0.6.0-dev4")
             }
         }
 

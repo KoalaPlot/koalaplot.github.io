@@ -3,7 +3,7 @@ package io.github.koalaplot.example
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.window.singleWindowApplication
-import io.github.koalaplot.core.line.LinePlot
+import io.github.koalaplot.core.line.StairstepPlot
 import io.github.koalaplot.core.style.LineStyle
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.DefaultPoint
@@ -24,7 +24,7 @@ fun main() = singleWindowApplication {
         rememberFloatLinearAxisModel(data.autoScaleXRange()),
         rememberFloatLinearAxisModel(data.autoScaleYRange())
     ) {
-        LinePlot(
+        StairstepPlot(
             data,
             lineStyle = LineStyle(SolidColor(Color.Blue))
         )

@@ -8,7 +8,7 @@ import io.github.koalaplot.core.bar.solidBar
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.CategoryAxisModel
 import io.github.koalaplot.core.xygraph.XYGraph
-import io.github.koalaplot.core.xygraph.rememberLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
 
 @OptIn(ExperimentalKoalaPlotApi::class)
 fun main() = singleWindowApplication {
@@ -34,11 +34,11 @@ fun main() = singleWindowApplication {
 
     XYGraph(
         xAxisModel = remember { CategoryAxisModel(years) },
-        yAxisModel = rememberLinearAxisModel(0f..10f, minorTickCount = 0),
+        yAxisModel = rememberFloatLinearAxisModel(0f..10f, minorTickCount = 0),
         yAxisTitle = "Population (Millions)"
     ) {
         StackedVerticalBarPlot {
-            boroughs.forEachIndexed { index, borough ->
+            boroughs.forEachIndexed { index, _ ->
                 series(solidBar(colors[index])) {
                     years.forEachIndexed { yearIndex, year ->
                         item(year, population[index][yearIndex].toFloat() / 1E6f)
