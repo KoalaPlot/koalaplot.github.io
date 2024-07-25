@@ -72,7 +72,7 @@ title = "Koala Plot"
 [[menu.main]]
    name = "API"
    weight = 20
-   url = "https://koalaplot.github.io/koalaplot-core/api/0.5.4/index.html"
+   url = "https://koalaplot.github.io/koalaplot-core/api/0.6.2/index.html"
    pre = "<i class='fas fa-gear'></i>"
    post = '<sup><i class="ps-1 fa-solid fa-up-right-from-square fa-xs" aria-hidden="true"></i><sup>'
 [[menu.main]]
