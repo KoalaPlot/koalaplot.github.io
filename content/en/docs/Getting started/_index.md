@@ -16,7 +16,7 @@ Including ```mavenLocal()``` is optional, if you want to use pre-release builds 
 
 Include Koala Plot core as a dependency in your project's build.gradle.kts
 
-{{% code "/examples/build.gradle.kts" 29 29 %}}
+{{% code "/examples/build.gradle.kts" 30 30 %}}
 
 You can also see a complete example of a build.gradle.kts in the [samples](https://github.com/KoalaPlot/koalaplot-samples/blob/main/build.gradle.kts).
 
