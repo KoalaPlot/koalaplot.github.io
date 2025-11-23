@@ -15,7 +15,7 @@ desktop, iOS, and web using a single API and code base.
 Most elements of a plot are Composables and can therefore be easily customized. This includes things like colors, fonts,
 borders, shapes, user interaction, etc.
 
-Try out the [web version of the samples](https://koalaplot.github.io/koalaplot-samples/wasmJs/productionExecutable/index.html) for a quick look at
+Try out the [web version of the samples](https://koalaplot.github.io/koalaplot-samples/productionExecutable/index.html) for a quick look at
 the possibilities when using Koala Plot. Note that this uses
 the [alpha Kotlin wasm Compose web-canvas](https://kotlinlang.org/docs/wasm-overview.html) capability, and you'll
 need a browser supporting the [wasm garbage collection feature](https://github.com/WebAssembly/gc). For more information
