@@ -16,7 +16,7 @@ An open source charting and plotting library for Compose Multiplatform
     <a class="btn btn-lg btn-secondary me-3 mb-4" href="docs/">
       Learn More
     </a>
-    <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://koalaplot.github.io/koalaplot-samples/wasmJs/productionExecutable/index.html">
+    <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://koalaplot.github.io/koalaplot-samples/productionExecutable/index.html">
       Demo <i class="fas fa-arrow-alt-circle-right ms-2 "></i>
     </a>
 </div>
