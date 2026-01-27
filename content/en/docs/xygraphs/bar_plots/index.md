@@ -10,19 +10,19 @@ Bar Plots are also 2-D plots and are therefore plotted within an ```XYGraph``` p
 
 The simplest type of vertical bar plot has a single series of data, and there is a ```VerticalBarPlot``` overload to make this use case easy when using Float values for the y-axis. The below example demonstrates this to plot the population of each New York City burrough.
 
-{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/VerticalBar1.kt" 16 31 %}}
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/VerticalBar1.kt" 14 35 %}}
 ![Vertical bars](VerticalBar1.png)
 {{% /example %}}
 
 In the above example, all bars were automatically extended to the origin of the y-axis, 0. In some cases it is desirable to plot vertical bars with starting positions that are not at 0. To support this use case, there is a second form of ```VerticalBarPlot``` that allows specifying the starting and ending coordinates of each bar. The below example demonstrates using this flexibility to create a waterfall chart:
 
-{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/VerticalBar2.kt" 17 39 %}}
+{{% example "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/VerticalBar2.kt" 17 53 %}}
 ![Waterfall](VerticalBar2.png)
 {{% /example %}}
 
 There is also a builder DSL for vertical bar plots, that slightly improves on the syntax. The previous example can also be implemented as follows:
 
-{{% code "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/VerticalBar3.kt" 15 29  %}}
+{{% code "/examples/src/jvmMain/kotlin/io/github/koalaplot/example/VerticalBar3.kt" 17 29  %}}
 
 {{% alert title="Tip" color="info" %}}
 For improved type safety, consider using an enumeration for the ```CategoryAxisModel``` categories. If an item is added with a category value that is not a member of the list provided to the ```CategoryAxisModel``` constructor, a runtime exception will be thrown.

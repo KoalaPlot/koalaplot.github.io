@@ -4,7 +4,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.window.singleWindowApplication
-import io.github.koalaplot.core.bar.DefaultVerticalBar
+import io.github.koalaplot.core.bar.DefaultBar
 import io.github.koalaplot.core.bar.VerticalBarPlot
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
 import io.github.koalaplot.core.xygraph.CategoryAxisModel
@@ -17,16 +17,19 @@ fun main() = singleWindowApplication {
     val population = listOf(1.446788f, 2.648452f, 1.638281f, 2.330295f, 0.487155f)
 
     XYGraph(
-        xAxisModel = remember { CategoryAxisModel(boroughs) },
-        yAxisModel = rememberFloatLinearAxisModel(0f..3f, minorTickCount = 0),
-        yAxisTitle = "Population (Millions)"
+            xAxisModel = remember { CategoryAxisModel(boroughs) },
+            yAxisModel = rememberFloatLinearAxisModel(0f..3f, minorTickCount = 0),
+            yAxisTitle = "Population (Millions)"
     ) {
         VerticalBarPlot(
-            xData = boroughs,
-            yData = population,
-            bar = {
-                DefaultVerticalBar(SolidColor(Color.Blue))
-            }
+                xData = boroughs,
+                yData = population,
+                bar = { _, _, _ ->
+                    DefaultBar(
+                            brush = SolidColor(Color.Blue),
+                            modifier = Modifier.fillMaxWidth(),
+                    )
+                }
         )
     }
 }
